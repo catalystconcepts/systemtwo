@@ -1,0 +1,3 @@
+app_root:
+    path: /
+    defaults: {_controller: Dream89AppBundle:Home:index}
