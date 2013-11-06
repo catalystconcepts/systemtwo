@@ -8,5 +8,5 @@ user_register:
 
 user_create:
     path: /user/create
-    defaults: {_controller: Dream89AppBundle:User:register}
+    defaults: {_controller: Dream89AppBundle:User:create}
     requirements: { _method: post }

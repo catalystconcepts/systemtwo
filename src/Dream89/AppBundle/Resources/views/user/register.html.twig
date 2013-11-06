@@ -1,5 +1,6 @@
 {% extends '::base.html.twig' %}
 
+{% block title %}Register - {{ parent() }}{% endblock %}
 {% block body %}
     <div class="row">
         <div class="col-md-8 col-md-offset-4">
@@ -70,6 +71,10 @@
                     </div>
                 </div>
             </form>
+            <br/>
+            <div>
+                <a class="btn btn-default" href="{{ path('app_root') }}">Cancel</a>
+            </div>
         </div>
     </div>
 {% endblock %}

@@ -28,4 +28,9 @@ Dream89\AppBundle\Entity\User:
             type: datetime
         updated:
             type: datetime
+    uniqueConstraints:
+            username:
+                columns: username
+            email:
+                columns: email
     lifecycleCallbacks: {  }

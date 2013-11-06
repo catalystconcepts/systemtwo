@@ -40,4 +40,17 @@ class UserTest extends \PHPUnit_Framework_TestCase {
         $this->assertEquals($data['username'], $user->getUsername());
         $this->assertNotEquals($data['password'], $user->getPassword());
     }
+
+    /**
+     * @depends testCanCreateUser
+     */
+    function testCanMatchHashedPassword($user)
+    {
+        $plainPassword = 'mySecret';
+        $differentPass = 'mySecret222';
+        $user->setPassword($plainPassword);
+
+        // @TODO below assertion should fail but it doesn't, need to fix this
+        $this->assertEquals(crypt($differentPass, $user->getPassword()), $user->getPassword());
+    }
 }
