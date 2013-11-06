@@ -17,13 +17,13 @@ class UserType extends AbstractType
             ->add('last_name', null, array(
                 'label' => false,
             ))
-            ->add('email', null, array(
+            ->add('email', 'email', array(
                 'label' => false,
             ))
             ->add('username', null, array(
                 'label' => false,
             ))
-            ->add('password', null, array(
+            ->add('password', 'password', array(
                 'label' => false,
             ))
         ;
