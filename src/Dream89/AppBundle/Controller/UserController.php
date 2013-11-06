@@ -33,6 +33,11 @@ class UserController extends Controller {
             $em->persist($entity);
             $em->flush();
 
+            $this->get('session')->getFlashBag()->add(
+                'success',
+                'You are now a registered member of the site, you may login using your credentials.'
+            );
+
             return $this->redirect($this->generateUrl('app_root'));
         }
 

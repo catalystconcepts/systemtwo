@@ -15,9 +15,23 @@
     <![endif]-->
 </head>
 <body>
- <div class="content" style="margin-left: 10px; margin-top: 20px"
-     {% block body %}{% endblock %}
- </div>
+    <div class="container">
+        <!-- if javascript is turned off -->
+        {% block noscript %}
+            {{ include('no-script.html') }}
+        {% endblock %}
+
+        <div class="row"><!-- Flash notification messages -->
+            <div class="col-md-10">
+                <br/>
+                {{ include('show-flash-msgs.html.twig') }}
+            </div>
+        </div>
+        <!-- Renders page contents here -->
+        <div class="content" style="margin-left: 10px; margin-top: 20px"
+            {% block body %}{% endblock %}
+        </div>
+    </div>
 {% block javascripts %}
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="/assets/jquery/jquery-1.10.2.min.js"></script>

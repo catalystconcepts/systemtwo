@@ -8,6 +8,11 @@ class HomeController extends Controller {
 
     function indexAction()
     {
+        $this->get('session')->getFlashBag()->add(
+            'warning',
+            'This site is still under construction.'
+        );
+
         $em = $this->getDoctrine()->getManager();
         $users = $em->getRepository('Dream89AppBundle:User')->findAll();
 

@@ -1,0 +1,9 @@
+{% set modes = ['success', 'info', 'error', 'warning' ] %}
+{% for mode in modes %}
+    {% for flashMessage in app.session.flashbag.get(mode) %}
+        <div class="alert alert-{{ mode }}">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+{% endfor %}
