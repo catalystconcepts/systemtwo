@@ -1,0 +1,75 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-8 col-md-offset-4">
+            <form action="{{ path('user_create') }}" class="appnitro form-horizontal"
+                  method="post" {{ form_enctype(form) }} novalidate>
+
+                {{ form_errors(form) }}
+                {{ form_widget(form._token) }}
+
+                <div class="control-group">
+                    <label class="control-label">First name
+                        <span class="f-required">*</span>
+                    </label>
+
+                    <div class="controls">
+                        {{ form_row(form.first_name) }}
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Last name
+                        <span class="f-required">*</span>
+                    </label>
+
+                    <div class="controls">
+                        {{ form_row(form.last_name) }}
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Email
+                        <span class="f-required">*</span>
+                    </label>
+
+                    <div class="controls">
+                        {{ form_row(form.email) }}
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Username
+                        <span class="f-required">*</span>
+                    </label>
+
+                    <div class="controls">
+                        {{ form_row(form.username) }}
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Password
+                        <span class="f-required">*</span>
+                    </label>
+
+                    <div class="controls">
+                        {{ form_row(form.password) }}
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Confirm Password
+                        <span class="f-required">*</span>
+                    </label>
+
+                    <div class="controls">
+                        <input type="text">
+                    </div>
+                </div>
+                <br/>
+                <div class="control-group">
+                    <div class="controls">
+                        <input name="submit" class="btn btn-success" type="submit" value="Register"/>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
