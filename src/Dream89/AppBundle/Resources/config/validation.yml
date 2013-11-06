@@ -1,0 +1,30 @@
+Dream89\AppBundle\Entity\User:
+    properties:
+        firstName:
+            - NotBlank: ~
+            - Length:
+                min: 2
+                max: 30
+                minMessage: "Your first name must be at least {{ limit }} characters length"
+                maxMessage: "Your first name cannot be longer than {{ limit }} characters length"
+        lastName:
+            - NotBlank: ~
+            - Length:
+                min: 2
+                max: 30
+                minMessage: "Your last name must be at least {{ limit }} characters length"
+                maxMessage: "Your last name cannot be longer than {{ limit }} characters length"
+        email:
+            - NotBlank: ~
+            - Email:
+                message: '"{{ value }}" is not a valid email.'
+                checkMX: true
+        username:
+            - NotBlank: ~
+            - Length:
+                min: 3
+                max: 16
+                minMessage: "Your username must be at least {{ limit }} characters length"
+                maxMessage: "Your username cannot be longer than {{ limit }} characters length"
+        password:
+            - NotBlank: ~

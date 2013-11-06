@@ -1,0 +1,36 @@
+Dream89\AppBundle\Entity\User:
+    type: entity
+    table: null
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        firstName:
+            type: string
+            length: '64'
+            column: first_name
+        lastName:
+            type: string
+            length: '64'
+            column: last_name
+        email:
+            type: string
+            length: '128'
+        username:
+            type: string
+            length: '32'
+        password:
+            type: string
+            length: 255
+        created:
+            type: datetime
+        updated:
+            type: datetime
+    uniqueConstraints:
+            username:
+                columns: username
+            email:
+                columns: email
+    lifecycleCallbacks: {  }
