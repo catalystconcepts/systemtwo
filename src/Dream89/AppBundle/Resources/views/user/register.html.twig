@@ -3,7 +3,12 @@
 {% block title %}Register - {{ parent() }}{% endblock %}
 {% block body %}
     <div class="row">
+        <div class="col-md-8">
+            <h2>Become a Member. It's FREE!!</h2>
+         </div>
+
         <div class="col-md-8 col-md-offset-4">
+            <br/>
             <form action="{{ path('user_create') }}" class="appnitro form-horizontal"
                   method="post" {{ form_enctype(form) }} novalidate>
 
