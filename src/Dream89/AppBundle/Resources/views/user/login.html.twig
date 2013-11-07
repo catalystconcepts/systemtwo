@@ -1,0 +1,33 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}Please sign in - {{ parent() }}{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <!-- Custom styles for this template -->
+    <link href="/app/css/signin.css" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+    {% if show_signup == true %}
+        <br/>
+        <div>
+            <p>Don't have an account?</p>
+            <a class="btn btn-lg btn-success" href="{{ path('user_register') }}">Sign up FREE!</a>
+        </div>
+    {% endif %}
+    <div class="row">
+        <div class="col-md-12">
+            <form class="form-signin" action="{{ path('user_login') }}" method="post">
+                <h2 class="form-signin-heading">Please sign in</h2>
+                <p>
+                    ( or <a href="{{ path('user_register') }}">Create an account )</a>
+                </p>
+                <input name="username" class="form-control" placeholder="Username" required="" autofocus="" type="text">
+                <input name="password" class="form-control" placeholder="Password" required="" type="password">
+
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

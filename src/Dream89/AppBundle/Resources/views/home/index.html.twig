@@ -3,8 +3,10 @@
 {% block title %}Home Page - {{ parent() }}{% endblock %}
 {% block body %}
     <div class="row">
-        <div class="col-md-8 col-md-offset-4">
+        <div class="col-md-8">
             <h1>WelCome! to Home Page</h1>
+        </div>
+        <div class="col-md-8 col-md-offset-4">
             <br/>
             <p>Our members:</p>
             <ol>
@@ -15,7 +17,7 @@
                 {% endfor %}
             </ol>
             <br/>
-            <a class="btn btn-success" href="{{ path('user_register') }}">Sign Up Now!</a>
+            <a class="btn btn-success" href="#">Coming soon! </a>
         </div>
     </div>
 {% endblock %}
