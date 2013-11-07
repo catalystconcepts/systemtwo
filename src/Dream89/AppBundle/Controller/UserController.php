@@ -3,6 +3,7 @@
 namespace Dream89\AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\HttpFoundation\Request;
 use Dream89\AppBundle\Entity\User;
 use Dream89\AppBundle\Form\UserType;
@@ -18,6 +19,21 @@ class UserController extends Controller {
             'entity' => $entity,
             'form' => $form->createView(),
         ));
+    }
+
+    function loginAction()
+    {
+        $session = new Session();
+        $session->set('authenticated', true);
+
+        return $this->render('Dream89AppBundle:user:login.html.twig');
+    }
+
+    function logoutAction()
+    {
+        $session = new Session();
+        $session->set('authenticated', false);
+        return $this->render('Dream89AppBundle:user:logout.html.twig');
     }
 
     function createAction(Request $request)
@@ -41,7 +57,7 @@ class UserController extends Controller {
             return $this->redirect($this->generateUrl('app_root'));
         }
 
-        return $this->render('Dream89AppBundle:User:register.html.twig', array(
+        return $this->render('Dream89AppBundle:user:register.html.twig', array(
            'entity' => $entity,
             'form' => $form->createView(),
         ));

@@ -2,6 +2,14 @@ app_root:
     path: /
     defaults: {_controller: Dream89AppBundle:Home:index}
 
+user_login:
+    path: /login
+    defaults: {_controller: Dream89AppBundle:User:login}
+
+user_logout:
+    path: /logout
+    defaults: {_controller: Dream89AppBundle:User:logout}
+
 user_register:
     path: /register
     defaults: {_controller: Dream89AppBundle:User:register}
