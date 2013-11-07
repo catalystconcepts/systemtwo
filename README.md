@@ -52,14 +52,14 @@ work for you:
 
 		sh update-schema.sh
 
-8. Run server using Symfony built-in command
+8. Run server using Symfony built-in command. Goto 'http://localhost:8000' in your browser.
 
 		php app/console server:run
 
-   ( Alternatively you can point your web server's root to the web directory in the app. Now goto http://your-domain/ )
+   ( Alternatively you can point your web server's root to the web directory in the app. And then goto http://your-domain/ )
    
-   And you should see the login page.
+   Now you should see the login page.
    
-	 default user:
-	   		username: su001
+	 default user =>
+	   		username: john123,
 	   		password: pass123
