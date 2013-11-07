@@ -36,8 +36,8 @@ class RequestListener {
         }
         /* end public access */
 
-        // if authenticated
-        if($session->get('authenticated'))
+        // if authenticated and has user session
+        if($session->get('user'))
         {
             return;
         }
