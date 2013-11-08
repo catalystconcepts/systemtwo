@@ -1,6 +1,9 @@
 .container {
     margin-left: 10px; margin-top: 20px
 }
-.f-required {
+.f-required, span.text-error {
+    font-family: arial, sans-serif;
+    font-size: 11px !important;
+    font-weight: normal;
     color: red;
 }

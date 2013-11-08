@@ -93,8 +93,7 @@ class UserController extends Controller {
                 'success',
                 'Congratz!!! You are now a member of the site, you may login using your credentials.'
             );
-
-            return $this->redirect($this->generateUrl('app_root'));
+            return $this->redirect($this->generateUrl('user_login'));
         }
 
         return $this->render('Dream89AppBundle:user:register.html.twig', array(
