@@ -3,81 +3,105 @@
 {% block title %}Register - {{ parent() }}{% endblock %}
 {% block body %}
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-8 col-md-offset-1">
             <h2>Become a Member. It's FREE!!</h2>
          </div>
 
-        <div class="col-md-8 col-md-offset-4">
+        <div class="col-md-8 col-md-offset-3">
             <br/>
-            <form action="{{ path('user_create') }}" class="appnitro form-horizontal"
-                  method="post" {{ form_enctype(form) }} novalidate>
+            <form action="{{ path('user_create') }}" class="form-horizontal"
+                  method="post" {{ form_enctype(form) }} role="form" novalidate>
 
-                {{ form_errors(form) }}
                 {{ form_widget(form._token) }}
 
-                <div class="control-group">
-                    <label class="control-label">First name
+                <div class="form-group">
+                    <label class="col-sm-3 control-label text-info">First name
                         <span class="f-required">*</span>
                     </label>
-
-                    <div class="controls">
-                        {{ form_row(form.first_name) }}
+                    <div class="col-sm-5">
+                        {{ form_widget(form.firstName, {'attr': {'class': 'form-control'} }) }}
                     </div>
+                    <span class="inline text-error">
+                        <label style="display: inline-block;" class="error">
+                            {{ form_errors(form.firstName) }}
+                        </label>
+                    </span>
                 </div>
-                <div class="control-group">
-                    <label class="control-label">Last name
+
+                <div class="form-group">
+                    <label  class="col-sm-3 control-label text-info">Last name
                         <span class="f-required">*</span>
                     </label>
-
-                    <div class="controls">
-                        {{ form_row(form.last_name) }}
+                    <div class="col-sm-5">
+                        {{ form_widget(form.lastName, {'attr': {'class': 'form-control'} }) }}
                     </div>
+                    <span class="inline text-error">
+                        <label style="display: inline-block;" class="error">
+                            {{ form_errors(form.lastName) }}
+                        </label>
+                    </span>
                 </div>
-                <div class="control-group">
-                    <label class="control-label">Email
+
+                <div class="form-group">
+                    <label  class="col-sm-3 control-label text-info">Email
                         <span class="f-required">*</span>
                     </label>
-
-                    <div class="controls">
-                        {{ form_row(form.email) }}
+                    <div class="col-sm-5">
+                        {{ form_widget(form.email, {'attr': {'class': 'form-control'} }) }}
                     </div>
+                    <span class="inline text-error">
+                        <label style="display: inline-block;" class="error">
+                            {{ form_errors(form.email) }}
+                        </label>
+                    </span>
                 </div>
-                <div class="control-group">
-                    <label class="control-label">Username
+
+                <div class="form-group">
+                    <label  class="col-sm-3 control-label text-info">Username
                         <span class="f-required">*</span>
                     </label>
-
-                    <div class="controls">
-                        {{ form_row(form.username) }}
+                    <div class="col-sm-5">
+                        {{ form_widget(form.username, {'attr': {'class': 'form-control'} }) }}
                     </div>
+                    <span class="inline text-error">
+                        <label style="display: inline-block;" class="error">
+                            {{ form_errors(form.username) }}
+                        </label>
+                    </span>
                 </div>
-                <div class="control-group">
-                    <label class="control-label">Password
+
+                <div class="form-group">
+                    <label  class="col-sm-3 control-label text-info">Password
                         <span class="f-required">*</span>
                     </label>
-
-                    <div class="controls">
-                        {{ form_row(form.password) }}
+                    <div class="col-sm-5">
+                        {{ form_widget(form.password, {'attr': {'class': 'form-control'} }) }}
                     </div>
+                    <span class="inline text-error">
+                        <label style="display: inline-block;" class="error">
+                            {{ form_errors(form.password) }}
+                        </label>
+                    </span>
                 </div>
-                <div class="control-group">
-                    <label class="control-label">Confirm Password
+
+                <div class="form-group">
+                    <label  class="col-sm-3 control-label text-info">Confirm Password
                         <span class="f-required">*</span>
                     </label>
-
-                    <div class="controls">
-                        <input id="confirm_password" name="confirm_password" type="password" required="required">
+                    <div class="col-sm-5">
+                        <input id="confirm_password" class="form-control" name="confirm_password" type="password" required="required">
                     </div>
                 </div>
+
                 <br/>
-                <div class="control-group">
-                    <div class="controls">
-                        <input name="submit" class="btn btn-success" type="submit" value="Register"/>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <input class="btn btn-success" type="submit" value="Register"/>
                     </div>
                 </div>
             </form>
             <br/>
-            <div>
+            <div class="col-sm-offset-2 col-sm-10">
                 <a class="btn btn-default" href="{{ path('app_root') }}">Cancel</a>
             </div>
         </div>

@@ -4,7 +4,7 @@
 {% block body %}
     <div class="row">
         <div class="col-md-12">
-            <p>Logged in as &lt;username&gt; |
+            <p>Logged in as <b>{{ current_username   }}</b> |
                 <a href="{{ path('user_logout') }}">Log out</a>
             </p>
         </div>

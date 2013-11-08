@@ -18,6 +18,7 @@ class HomeController extends Controller {
 
         return $this->render('Dream89AppBundle:home:index.html.twig', array(
             'users' => $users,
+            'current_username' => $this->get('session')->get('user')->getUsername(),
         ));
     }
 }
