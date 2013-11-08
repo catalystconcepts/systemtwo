@@ -26,11 +26,9 @@ class RequestListener {
         $router = $this->container->get('router');
 
         /* public access */
-        if ('user_login' === $event->getRequest()->get('_route'))
-        {
-            return;
-        }
-        if ('user_register' === $event->getRequest()->get('_route'))
+        $public_routes = array('user_login', 'user_register', 'user_create');
+
+        if (in_array($event->getRequest()->get('_route'), $public_routes))
         {
             return;
         }

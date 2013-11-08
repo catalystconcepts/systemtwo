@@ -3,6 +3,11 @@
 {% block title %}Home Page - {{ parent() }}{% endblock %}
 {% block body %}
     <div class="row">
+        <div class="col-md-12">
+            <p>Logged in as &lt;username&gt; |
+                <a href="{{ path('user_logout') }}">Log out</a>
+            </p>
+        </div>
         <div class="col-md-8">
             <h1>WelCome! to Home Page</h1>
         </div>
