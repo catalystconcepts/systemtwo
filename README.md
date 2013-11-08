@@ -22,6 +22,8 @@ work for you:
 
 ## Installation
 
+##### Watch how to install [screencast](http://screencast.com/t/Hocb8ptOp) (<3min)
+
 1. Clone the master branch or grab the latest from releases and unzip the file on the web server. 
 
     	git clone https://github.com/dream89/verno-demo.git
